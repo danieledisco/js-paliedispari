@@ -15,26 +15,39 @@ Dichiariamo chi ha vinto.
 */
 
 
-/*
-Palindroma
 
- - Si fa immettere la parola dall'utente
- - Si imposta come risultato true
- - Tramite .length si calcola la sua lunghezza
- - si verifica se la lunghezza len è pari o dispari
- - Nel primo caso definiamo half = len/2 nel seconodo caso half = (len-1)/2
- - si effettua il ciclo da i ad half escluso e si verificano 
-        se c[i] =?= c[len-i-1]
- - Alla prima i in cui i caratteri sono diversi si cambia result in false e si interrompe il ciclo
-        se non capita allora sono tutti uguali e result resta true.
 
-*/
+
+
+
+
+
+
+
+
 
 const input = prompt("Per cortesia introduci una parola");
-
 const result = isPalindrome(input);
 
 if (result)
     confirm("L'input è palindromo" )
 else
     confirm("L'input non è palindromo")
+
+confirm("Continuiamo a giocare")
+const even_odd = Number(prompt("Scegli pari o dispari -1 per pari 2 per dispari-"));
+const player_number = Number(prompt("Introduci un numero tra 1 e 5"));
+console.log("player_number " + player_number);
+const pc_number = doRandomForPc();
+console.log("pc_number " + pc_number);
+const total = player_number + pc_number;
+console.log("total " + total);
+
+if ((isEven(total) && even_odd == 1) || (isOdd(total) && even_odd == 2))
+{
+    confirm("Tu sei il vincitore")
+}
+else
+{
+    confirm("Il pc è il vincitore")
+} 
